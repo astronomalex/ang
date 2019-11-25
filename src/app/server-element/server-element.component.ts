@@ -11,7 +11,8 @@ import {
   AfterViewInit,
   AfterViewChecked,
   OnDestroy,
-  ViewChild, ElementRef
+  ViewChild,
+  ElementRef
 } from '@angular/core';
 
 @Component({
@@ -29,6 +30,7 @@ export class ServerElementComponent implements
   AfterViewInit,
   AfterViewChecked,
   OnDestroy {
+  // tslint:disable-next-line:no-input-rename
   @Input('srvElement') element: {type: string, name: string, content: string};
   @Input() name: string;
   @ViewChild('heading', { static: false }) header: ElementRef;
@@ -44,7 +46,6 @@ export class ServerElementComponent implements
 
   ngOnInit() {
     console.log('ngOnInit called!');
-    console.log(this.header.nativeElement.textContent);
   }
 
   ngDoCheck() {
@@ -61,6 +62,7 @@ export class ServerElementComponent implements
 
   ngAfterViewInit () {
     console.log('ngAfterViewInit called!');
+    console.log(this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked () {
